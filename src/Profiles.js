@@ -1,6 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
-import { Link, Route } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
+// import { Link, Route } from "react-router-dom";
 // import WithRouterSample from "./WithRouterSample";
 
 function Profiles() {
@@ -9,10 +10,28 @@ function Profiles() {
       <h3>사용자 목록</h3>
       <ul>
         <li>
-          <Link to="/profiles/nerani">nerani</Link>
+          <NavLink
+            to="/profiles/nerani"
+            // to="/" exact
+            //스타일 주기
+            activeStyle={{ background: "black", color: "white" }}
+            //클래스주기
+            // activeClassName="active"
+            // //좀더 까다롭게 특정함수를 반환할때 스타일을 주고플때
+            // isActive={(match, location)=>{
+            //   return match.params.brara = 'asdfasd';
+            // }}   -> true반환시 스타일들어가고, false반환시 안들어가고
+          >
+            nerani
+          </NavLink>
         </li>
         <li>
-          <Link to="/profiles/homer">homer</Link>
+          <NavLink
+            to="/profiles/homer"
+            activeStyle={{ background: "black", color: "white" }}
+          >
+            homer
+          </NavLink>
         </li>
       </ul>
 
